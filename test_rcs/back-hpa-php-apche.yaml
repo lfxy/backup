@@ -1,0 +1,15 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: php-apache
+  namespace: kube-system
+  annotations:
+      alpha/target.custom-metrics.podautoscaler.kubernetes.io: '{"items":[{"name":"qps", "value": "70", "servicename":"payss"}]}'
+spec:
+  scaleTargetRef:
+    apiVersion: v1
+    kind: ReplicationController
+    name: php-apache
+  minReplicas: 1
+  maxReplicas: 2
+  targetCPUUtilizationPercentage: 60

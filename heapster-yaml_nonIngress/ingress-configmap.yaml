@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  cluster.ips: 10.15.137.244:33611
+kind: ConfigMap
+metadata:
+  name: nginx
+  namespace: kube-system

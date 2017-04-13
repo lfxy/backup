@@ -1,0 +1,17 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: sample-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: sample-deployment
+    spec:
+      containers:
+        - name: sample
+          image: 10.213.42.254:10500/huangyujun6/sample:1.0
+          ports:
+            - containerPort: 8080

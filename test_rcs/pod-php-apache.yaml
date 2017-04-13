@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginxservice
+  namespace: kube-system
+  labels:
+    name: nginxservice
+spec:
+  containers:
+  - name: nginxservice
+    image: 10.213.42.254:10500/caozhiqiang1/hpa-example:v4.2
+    imagePullPolicy: IfNotPresent
+    resources:
+      limits:
+        cpu: 100m
+        memory: 200Mi
+      requests:
+        cpu: 100m
+        memory: 200Mi
+    ports:
+    - containerPort: 8989

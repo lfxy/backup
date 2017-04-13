@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    serverPort: "11021"
+    visualIP: ""
+  generation: 1
+  name: php-apache
+  namespace: kube-system
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: php-apache
+          servicePort: 8080
+        path: /
+status:
+  loadBalancer: {}

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox
+  namespace: kube-system
+spec:
+  containers:
+  - name: busybox
+    image: 10.213.42.254:10500/caozhiqiang1/busybox
+    imagePullPolicy: IfNotPresent
+    command: [ "sleep", "3600" ]
